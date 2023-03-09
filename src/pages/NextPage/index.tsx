@@ -25,7 +25,7 @@ export default function NextPage(){
                     </p>
                 </Agradecimento>
                 <Footer>
-                    <img src="src\Images\ona-nv3.png" alt="" width={100} />
+                    <img src="https://i.imgur.com/xGD3YUz.png" alt="" width={100} />
                 </Footer>
             </Formato>
         </BackgroundNext>
