@@ -7,6 +7,7 @@ import { ButtonSubmit } from "../../components/General/buttons/buttonSubmit";
 import { CheckNota, TagNota} from "../../components/Inputs/checkBoxForm";
 import api from "../../services/api";
 import { Avaliacao, Botoes, CardBody, CardFooter, CardHeader, CardMain, Dados} from "./style";
+import Logo from "../..//Images/logo-horizontal.png";
 
 export function MainPage(){
     const {atend} = useParams()
@@ -64,7 +65,7 @@ export function MainPage(){
             <CardMain>
                 <form onSubmit={handleSubmit(RegisterInfo)}>
                     <CardHeader>
-                        <img src="src\Images\logo-horizontal.png" alt="" />
+                        <img src=`${Logo}` alt="" />
                         <h2>Pesquisa de satisfação Hospital São Camilo</h2>
                     </CardHeader>
                     <CardBody>
