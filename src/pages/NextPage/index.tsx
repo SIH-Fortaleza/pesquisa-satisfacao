@@ -1,5 +1,7 @@
 import { BackgroundNext } from "../../components/General/background/backgroundNext";
 import { Agradecimento, Footer, Formato } from "./styles";
+import SVG from "../..//Images/health-professional-team-animate.svg"
+
 
 export default function NextPage(){
     return(
@@ -9,7 +11,7 @@ export default function NextPage(){
                     <img src="https://saocamilofortaleza.org.br/wp-content/uploads/2021/06/logo4.png" width={200}/>
                 </div>
                 <div className="svg">
-                    <img id="svg" src="src\Images\health-professional-team-animate.svg" alt="svg" width={400}/>
+                   <img id="svg" src={SVG} alt="svg" width={400}/>
                 </div>
                 <Agradecimento>
                     <p>
