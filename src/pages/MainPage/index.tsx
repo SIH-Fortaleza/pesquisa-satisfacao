@@ -76,10 +76,10 @@ export function MainPage(){
                                     <thead>
                                         <tr>
                                             {notas.map((nota) => {
-                                                let fundo = `${nota.color}`;
+                                                
                                                 return (
                                                     <th key={nota.valor}>
-                                                    <TagNota htmlFor={`${nota.valor}`} fundo={fundo}>
+                                                    <TagNota htmlFor={`${nota.valor}`}>
                                                         <CheckNota
                                                             type="checkbox"
                                                             id={`${nota.valor}`}
@@ -87,6 +87,7 @@ export function MainPage(){
                                                             checked={inputsValues.nota === `${nota.valor}`}
                                                             onChange={(e) => setInputValues((prev) => ({ ...prev, nota: e.target.value }))}/>
                                                         <span
+                                                            style={{ background:`${nota.color}`}}
                                                             id={`${nota.valor}`}
                                                             className={inputsValues.nota === `${nota.valor}` ? "selected" : ""}>
                                                             {nota.valor}
