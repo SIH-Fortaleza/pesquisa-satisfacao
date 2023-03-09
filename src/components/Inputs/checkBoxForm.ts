@@ -4,7 +4,6 @@ import styled from "styled-components";
      cursor: pointer;
      
      span{
-            background: ${(props) => props.fundo};
             color: white;
             font-weight: 600;
             border-radius: 5px;
@@ -17,7 +16,7 @@ import styled from "styled-components";
         }
     input:checked + span{
         background: #BDBDBD ;
-        padding: 13px;
+        padding: 15px;
         
     }
 `
