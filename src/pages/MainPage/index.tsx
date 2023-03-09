@@ -65,7 +65,7 @@ export function MainPage(){
             <CardMain>
                 <form onSubmit={handleSubmit(RegisterInfo)}>
                     <CardHeader>
-                        <img src="https://saocamilofortaleza.org.br/wp-content/uploads/2021/06/logo4.png" alt="" />
+                        <img src="src/Images/logo-horizontal.png" alt="" />
                         <h2>Pesquisa de satisfação Hospital São Camilo</h2>
                     </CardHeader>
                     <CardBody>
