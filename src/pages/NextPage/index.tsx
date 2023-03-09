@@ -6,7 +6,7 @@ export default function NextPage(){
         <BackgroundNext>
             <Formato>
                 <div id="logo" className="logo">
-                    <img src="https://saocamilofortaleza.org.br/wp-content/uploads/2021/06/logo4.png" alt="logo" width={200}/>
+                    <img src="https://saocamilofortaleza.org.br/wp-content/uploads/2021/06/logo4.png" width={200}/>
                 </div>
                 <div className="svg">
                     <img id="svg" src="src\Images\health-professional-team-animate.svg" alt="svg" width={400}/>
