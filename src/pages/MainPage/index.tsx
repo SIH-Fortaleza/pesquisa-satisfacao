@@ -12,6 +12,8 @@ import Logo from "../..//Images/logo-horizontal.png";
 export function MainPage(){
     const {atend} = useParams()
     const navigate =  useNavigate()
+    const today = new Date().toISOString().slice(0, 10);
+
      const notas = [
          {valor: 0, color:'#e94212', iconName:'sentiment_dissatisfied', idIcon: 'bad'},
          {valor: 1, color:'#ed5e0e', iconName:'', idIcon: ''},
@@ -41,7 +43,8 @@ export function MainPage(){
                 const response = await api.post("/post/register", {
                     nota:inputsValues.nota,
                     obs:inputsValues.detalhes,
-                    atend:`${atend}`
+                    atend:`${atend}`,
+                    data:`${today}`
                  })
 
                  toast.success("Avaliação cadastrada com sucesso!")
