@@ -39,12 +39,18 @@ export function MainPage(){
             toast.error("Informe um nota de avaliação!")
         }
         else{
+            console.log({
+                nota:inputsValues.nota,
+                    obs:inputsValues.detalhes,
+                    atend:`${atend}`,
+                    data:today
+            })
             try{
                 const response = await api.post("/post/register", {
                     nota:inputsValues.nota,
                     obs:inputsValues.detalhes,
                     atend:`${atend}`,
-                    data:`${today}`
+                    data:today
                  })
 
                  toast.success("Avaliação cadastrada com sucesso!")
