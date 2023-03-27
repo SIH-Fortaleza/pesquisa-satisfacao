@@ -8,11 +8,14 @@ import { CheckNota, TagNota} from "../../components/Inputs/checkBoxForm";
 import api from "../../services/api";
 import { Avaliacao, Botoes, CardBody, CardFooter, CardHeader, CardMain, Dados} from "./style";
 import Logo from "../..//Images/logo-horizontal.png";
+import { Loader } from "../../components/Load";
 
 export function MainPage(){
     const {atend} = useParams()
     const navigate =  useNavigate()
     const today = new Date().toISOString().slice(0, 10);
+    const [isLoading, setIsLoading] = useState(false)
+
 
      const notas = [
          {valor: 0, color:'#e94212', iconName:'sentiment_dissatisfied', idIcon: 'bad'},
@@ -39,12 +42,7 @@ export function MainPage(){
             toast.error("Informe um nota de avaliação!")
         }
         else{
-            console.log({
-                nota:inputsValues.nota,
-                    obs:inputsValues.detalhes,
-                    atend:`${atend}`,
-                    data:today
-            })
+            setIsLoading(true)
             try{
                 const response = await api.post("/post/register", {
                     nota:inputsValues.nota,
@@ -52,12 +50,13 @@ export function MainPage(){
                     atend:`${atend}`,
                     data:today
                  })
-
+                setIsLoading(false);
                  toast.success("Avaliação cadastrada com sucesso!")
                  reset()
                  navigate('/next-page')
             }
             catch(err: any){
+                setIsLoading(false);
                 if(err.request.status === 404){
                     console.log(err)
                     toast.error("Você já avaliou esse atendimento!")
@@ -71,6 +70,7 @@ export function MainPage(){
     }
     return(
         <Background>
+            {isLoading && <Loader />}
             <CardMain>
                 <form onSubmit={handleSubmit(RegisterInfo)}>
                     <CardHeader>
