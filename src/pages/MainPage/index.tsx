@@ -44,7 +44,7 @@ export function MainPage(){
         else{
             setIsLoading(true)
             try{
-                const response = await api.post("api/post/register", {
+                const response = await api.post("/api/post/register", {
                     nota:inputsValues.nota,
                     obs:inputsValues.detalhes,
                     atend:`${atend}`,
